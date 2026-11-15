@@ -122,7 +122,7 @@
         entries.forEach(function (en) {
           if (en.isIntersecting) { en.target.classList.add('is-in'); rev.unobserve(en.target); }
         });
-      }, { rootMargin: '0px 0px -8% 0px' });
+      }, { rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.reveal').forEach(function (el) { rev.observe(el); });
     }
 
@@ -137,6 +137,33 @@
       }, { rootMargin: '0px 0px -30% 0px' }).observe(hero);
       new IntersectionObserver(function (e) { state.join = e[0].isIntersecting; upd(); }).observe(join);
     }
+  }
+
+  /* ---------- Chiffres clés : défilement jusqu'à la valeur ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var counters = Array.prototype.slice.call(document.querySelectorAll('.fact dt:not([data-i18n])'));
+    var countUp = function (el, i) {
+      var target = parseInt(el.textContent, 10);
+      if (!target) return;
+      el.setAttribute('aria-label', String(target));
+      var start = null, dur = 900, delay = 450 + i * 100;
+      el.textContent = '0';
+      var step = function (t) {
+        if (start === null) start = t;
+        var p = Math.min(1, Math.max(0, (t - start - delay) / dur));
+        el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(step); else el.removeAttribute('aria-label');
+      };
+      requestAnimationFrame(step);
+    };
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        countUp(en.target, counters.indexOf(en.target));
+        cio.unobserve(en.target);
+      });
+    });
+    counters.forEach(function (el) { cio.observe(el); });
   }
 
   /* ---------- Formulaire d'adhésion ---------- */
