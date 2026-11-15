@@ -126,7 +126,7 @@ main:focus{outline:none}
 
 /* Bureau */
 .bureau{background:var(--orange);color:var(--noir)}
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.4vw,32px)}
+.team{display:grid;grid-template-columns:repeat(3,1fr);max-width:980px;gap:clamp(20px,2.4vw,32px)}
 .member__ph{aspect-ratio:4/5;background:var(--noir);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:18px;margin-bottom:16px;outline:2px dashed rgba(244,241,234,.4);outline-offset:-12px}
 .member__ph img{width:58%;height:auto}
 .member__ph span{font:400 clamp(20px,1.9vw,26px)/1 var(--t-d);text-transform:uppercase;color:var(--papier);letter-spacing:.02em;text-align:center}
@@ -167,6 +167,7 @@ main:focus{outline:none}
 .join__chip{display:inline-block!important;background:var(--noir);color:var(--papier);padding:.04em .12em 0;margin-top:.06em}
 .join__lead{font-size:clamp(18px,1.6vw,21px);font-weight:700;line-height:1.4;margin-top:26px;max-width:28ch}
 .join__sil{position:absolute;left:0;bottom:0;width:var(--sil);height:auto}
+.join__mark{position:absolute;left:0;bottom:0;width:1px;height:calc(var(--sil) * 1.49 * .62);pointer-events:none}
 /* Écran large : la silhouette grandit avec la marge libre à gauche du contenu */
 @media (min-width:1800px){
   .join{--sil:min(560px,26vw);min-height:calc(var(--sil) * 1.49)}
@@ -175,7 +176,7 @@ main:focus{outline:none}
 }
 /* Entrée de la silhouette depuis le bord gauche */
 @media (min-width:1001px){
-  .anim .join__sil{transform:translateX(-105%);transition:transform .9s var(--ease) .15s}
+  .anim .join__sil{transform:translateX(-105%);transition:transform .9s var(--ease) .15s;will-change:transform}
   .anim .join.sil-in .join__sil{transform:none}
 }
 .join__box{align-self:start;margin-bottom:var(--sec)}
@@ -286,7 +287,7 @@ main:focus{outline:none}
   .pillar:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(24px,3vw,40px);align-items:start}
   .pillar:last-child .pillar__art{grid-row:span 4;margin-bottom:0}
   .pillar:last-child .tag{justify-self:start}
-  .team{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:repeat(3,1fr)}
   .talk{grid-template-columns:80px 1fr auto;gap:8px 24px}
   .talk__n{font-size:52px;grid-row:span 2}
   .talk__body{grid-column:2/4}
@@ -366,3 +367,8 @@ main:focus{outline:none}
   .hero__masc{width:min(30vw,240px)}
   .top__nav a:not(.btn){font-size:24px;min-height:48px;padding:10px 0}
 }
+
+/* Portraits du bureau : photo pleine case, cadrée par le haut pour ne jamais couper la tête */
+.member .member__ph--photo{padding:0;outline:none;background:var(--orange);overflow:hidden}
+.member .member__ph--photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+@media (max-width:600px){.team{grid-template-columns:1fr}}

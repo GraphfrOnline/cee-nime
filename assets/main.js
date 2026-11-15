@@ -124,12 +124,18 @@
         });
       }, { rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.reveal').forEach(function (el) { rev.observe(el); });
+      // La silhouette part hors écran (masquée par la section) : on observe un repère invisible
+      // posé à son emplacement final, qui entre à l'écran quand le haut du personnage devient visible.
       var joinSec = document.querySelector('.join');
-      if (joinSec) {
+      if (joinSec && joinSec.querySelector('.join__sil')) {
+        var mark = document.createElement('div');
+        mark.className = 'join__mark';
+        mark.setAttribute('aria-hidden', 'true');
+        joinSec.appendChild(mark);
         var sio = new IntersectionObserver(function (e) {
           if (e[0].isIntersecting) { joinSec.classList.add('sil-in'); sio.disconnect(); }
-        }, { threshold: 0.4 });
-        sio.observe(joinSec);
+        });
+        sio.observe(mark);
       }
     }
 
