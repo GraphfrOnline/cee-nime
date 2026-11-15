@@ -1,0 +1,4 @@
+_a-supprimer/
+.vercel
+.claude/
+node_modules/
