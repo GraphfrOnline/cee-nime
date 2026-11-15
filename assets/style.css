@@ -167,6 +167,17 @@ main:focus{outline:none}
 .join__chip{display:inline-block!important;background:var(--noir);color:var(--papier);padding:.04em .12em 0;margin-top:.06em}
 .join__lead{font-size:clamp(18px,1.6vw,21px);font-weight:700;line-height:1.4;margin-top:26px;max-width:28ch}
 .join__sil{position:absolute;left:0;bottom:0;width:var(--sil);height:auto}
+/* Écran large : la silhouette grandit avec la marge libre à gauche du contenu */
+@media (min-width:1800px){
+  .join{--sil:min(560px,26vw);min-height:calc(var(--sil) * 1.49)}
+  .join__text{padding-bottom:0;margin-left:max(0px,calc(var(--sil) * .8 + 32px - (100vw - var(--wrap)) / 2 - var(--g)))}
+  .join__title{font-size:min(6.4vw,136px)}
+}
+/* Entrée de la silhouette depuis le bord gauche */
+@media (min-width:1001px){
+  .anim .join__sil{transform:translateX(-105%);transition:transform .9s var(--ease) .15s}
+  .anim .join.sil-in .join__sil{transform:none}
+}
 .join__box{align-self:start;margin-bottom:var(--sec)}
 .form,.done{background:var(--noir);color:var(--papier);padding:clamp(24px,3vw,40px);box-shadow:10px 10px 0 var(--papier)}
 .form{display:grid;gap:18px}

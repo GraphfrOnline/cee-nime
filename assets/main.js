@@ -124,6 +124,13 @@
         });
       }, { rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.reveal').forEach(function (el) { rev.observe(el); });
+      var joinSec = document.querySelector('.join');
+      if (joinSec) {
+        var sio = new IntersectionObserver(function (e) {
+          if (e[0].isIntersecting) { joinSec.classList.add('sil-in'); sio.disconnect(); }
+        }, { threshold: 0.4 });
+        sio.observe(joinSec);
+      }
     }
 
     // Barre « Rejoindre » sur téléphone : visible après l'accueil, masquée sur la section Rejoindre
