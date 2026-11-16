@@ -178,6 +178,9 @@ main:focus{outline:none}
 @media (min-width:1001px){
   .anim .join__sil{transform:translateX(-105%);transition:transform .9s var(--ease) .15s;will-change:transform}
   .anim .join.sil-in .join__sil{transform:none}
+  /* Le texte n'apparaît qu'en fondu : un translateY sur ce bloc en ferait le repère de la silhouette
+     (position absolue) pendant l'animation, puis elle sautait vers le bord de la section à la fin. */
+  .anim .join__text.reveal{transform:none}
 }
 .join__box{align-self:start;margin-bottom:var(--sec)}
 .form,.done{background:var(--noir);color:var(--papier);padding:clamp(24px,3vw,40px);box-shadow:10px 10px 0 var(--papier)}
@@ -216,6 +219,13 @@ main:focus{outline:none}
 .soc a[href]:hover .soc__n{color:var(--orange)}
 .soc a[aria-disabled]{cursor:default}
 .soc__h{font-weight:600;color:var(--gris);padding:2px 6px}
+/* Affiche du club */
+.poster{display:grid;grid-template-columns:auto 1fr;gap:clamp(36px,6vw,96px);align-items:center;margin-top:clamp(64px,8vw,112px)}
+.poster__img{display:block;width:clamp(220px,24vw,340px);transform:rotate(-2deg);box-shadow:10px 10px 0 var(--orange);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.poster__img img{display:block;width:100%;height:auto}
+@media (hover:hover){.poster__img:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:13px 13px 0 var(--orange)}}
+.poster__title{font:400 clamp(44px,5vw,80px)/.92 var(--t-d);text-transform:uppercase}
+.poster__lead{font-size:clamp(17px,1.4vw,19px);font-weight:600;line-height:1.45;margin:18px 0 30px;max-width:32ch;color:rgba(244,241,234,.86)}
 .soc a[href] .soc__h{color:var(--papier);padding:0}
 
 /* Pied de page */
@@ -349,6 +359,9 @@ main:focus{outline:none}
   .form .row2{grid-template-columns:1fr;gap:18px}
   .soc{grid-template-columns:1fr}
   .soc a{padding:22px 0}
+  .poster{grid-template-columns:1fr;gap:40px}
+  .poster__img{width:min(72vw,300px);margin-left:6px;box-shadow:7px 7px 0 var(--orange)}
+  .poster__txt .btn{width:100%}
   .foot{padding-bottom:calc(112px + env(safe-area-inset-bottom))}
   .foot__in{grid-template-columns:1fr;gap:24px}
   .foot__logo{height:48px}
@@ -369,6 +382,7 @@ main:focus{outline:none}
 }
 
 /* Portraits du bureau : photo pleine case, cadrée par le haut pour ne jamais couper la tête */
-.member .member__ph--photo{padding:0;outline:none;background:var(--orange);overflow:hidden}
+/* Le fond orange des photos se confondait avec la section : cadre noir et ombre portée pour les détacher */
+.member .member__ph--photo{padding:0;outline:none;background:var(--orange);overflow:hidden;border:4px solid var(--noir);box-shadow:8px 8px 0 var(--noir);margin-bottom:24px}
 .member .member__ph--photo img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
-@media (max-width:600px){.team{grid-template-columns:1fr}}
+@media (max-width:600px){.team{grid-template-columns:1fr}.member .member__ph--photo{box-shadow:6px 6px 0 var(--noir);margin-right:6px}}

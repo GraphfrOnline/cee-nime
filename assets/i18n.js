@@ -6,6 +6,8 @@ window.CEE_EN = {
   "skip": "Skip to content",
   "a.home": "CEE, back to top", "a.homepage": "CEE, back to the homepage", "a.nav": "Main navigation", "a.menu": "Open the menu", "a.menuclose": "Close the menu",
   "a.foot": "Footer links", "a.iut": "IUT de Nîmes, University of Montpellier",
+  "a.poster": "CEE poster: “Got an idea? Let's talk about it.” Join the club, scan the QR code.",
+  "poster.title": "The club poster", "poster.lead": "To print or share: A3 format, print-ready.", "poster.dl": "Download the poster (PDF)",
   "legal": "Legal notice", "privacy": "Personal data", "up": "Back to top",
   "credits": "Brand identity and website by Lenny Geffroy and Théo Lematelot · agency <a href=\"https://graphfr.online\" rel=\"noopener\">graphfr.online</a>",
 
