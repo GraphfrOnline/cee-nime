@@ -220,13 +220,18 @@ main:focus{outline:none}
 
 /* Réseaux */
 .social{background:var(--noir)}
-.soc{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ligne)}
-.soc li{border-bottom:2px solid var(--ligne)}
-.soc a{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:30px 24px 30px 0;text-decoration:none;min-height:44px}
-.soc__n{font:400 clamp(32px,3.4vw,48px)/1 var(--t-d);text-transform:uppercase;transition:color .15s}
-.soc a[href]:hover .soc__n{color:var(--orange)}
+.soc{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:2px solid var(--ligne);border-bottom:2px solid var(--ligne)}
+.soc li{display:flex}
+.soc a{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:clamp(28px,3.4vw,44px) 4px;text-decoration:none;min-height:44px}
+.soc__ico{display:grid;place-items:center;width:clamp(56px,5vw,72px);aspect-ratio:1;background:var(--orange);color:var(--noir);margin-bottom:6px;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.soc__svg{width:52%;height:52%}
+.soc__n{font:400 clamp(30px,3vw,44px)/1 var(--t-d);text-transform:uppercase;transition:color .15s}
+@media (hover:hover){
+  .soc a[href]:hover .soc__ico{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--papier)}
+  .soc a[href]:hover .soc__n{color:var(--orange)}
+}
 .soc a[aria-disabled]{cursor:default}
-.soc__h{font-weight:600;color:var(--gris);padding:2px 6px}
+.soc__h{font-weight:600;color:var(--gris);padding:2px 6px;overflow-wrap:anywhere;max-width:100%}
 /* Affiche du club */
 .poster{display:grid;grid-template-columns:auto auto;justify-content:center;gap:clamp(36px,6vw,96px);align-items:center;margin-top:clamp(64px,8vw,112px)}
 .poster__img{display:block;width:clamp(220px,24vw,340px);transform:rotate(-2deg);box-shadow:10px 10px 0 var(--orange);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
@@ -317,7 +322,13 @@ main:focus{outline:none}
   .join__text{padding-bottom:0}
   .join__sil{position:static;grid-column:2;grid-row:1/4;width:clamp(120px,22vw,200px);margin:0 calc(-1 * var(--g)) 0 0;padding:0;transform:scaleX(-1) translateX(calc(-9.5% - var(--g)))}
   .join__box{margin-bottom:var(--sec)}
-  .soc{grid-template-columns:1fr 1fr}
+  /* Tablette et téléphone : chaque réseau en ligne, icône à gauche */
+  .soc{grid-template-columns:1fr 1fr;gap:0 32px}
+  .soc li:nth-child(n+3){border-top:1px solid var(--ligne)}
+  .soc a{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:18px;row-gap:4px;align-items:center;text-align:left;padding:18px 0}
+  .soc__ico{grid-row:1/3;width:56px;margin:0}
+  .soc__n{font-size:30px;align-self:end}
+  .soc__h{align-self:start;padding:0}
   .foot__in{grid-template-columns:auto auto}
   .foot__links{grid-column:1/-1;justify-content:flex-start;margin-left:-8px}
   .nf__in{grid-template-columns:1fr}
@@ -366,7 +377,7 @@ main:focus{outline:none}
   .form,.done{box-shadow:6px 6px 0 var(--papier);margin-right:6px}
   .form .row2{grid-template-columns:1fr;gap:18px}
   .soc{grid-template-columns:1fr}
-  .soc a{padding:22px 0}
+  .soc li:nth-child(2){border-top:1px solid var(--ligne)}
   .poster{grid-template-columns:1fr;justify-content:stretch;gap:40px}
   .poster__img{width:min(72vw,300px);justify-self:center;box-shadow:7px 7px 0 var(--orange)}
   .poster__txt .btn{width:100%}
