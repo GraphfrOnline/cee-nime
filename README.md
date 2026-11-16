@@ -38,18 +38,18 @@ _a-supprimer/              anciens fichiers remplacés (non publiés, non versio
 
 ## À brancher
 
-- `assets/config.js` : `formEndpoint` (URL Apps Script), `whatsapp`, `instagram`, `linkedin`, `youtube`, `mail`.
-  Tant qu'une valeur est vide, le lien correspondant reste inactif et le formulaire affiche « les inscriptions ouvrent bientôt ».
-  Après modification : `node outils/build.mjs` (met à jour l'empreinte de cache de config.js).
-- Formulaire : voir `google-apps-script/inscriptions.gs` (étapes en tête de fichier). Champs envoyés : prenom, nom, email, departement, langue, date.
-- Liste des départements : dans le `<select name="departement">` de `index.html` (et la traduction dans `i18n.js`).
-- Talks : à chaque sortie, remplacer le bloc du talk (nom, sujet) et ajouter le lien YouTube.
-- Photos du bureau : remplacer l'image mascotte de chaque `.member__ph` par la photo (WebP, 480 px de large).
-- Conférence : quand la date exacte et la salle sont connues, compléter aussi le JSON-LD `Event` dans le `<head>` de `index.html` (`startDate` au format AAAA-MM-JJ).
+- `assets/config.js` : réseaux et mail renseignés (Instagram, LinkedIn, YouTube, club.etudiant.cee@gmail.com).
+  Restent vides : `formEndpoint` (URL Apps Script) et `whatsapp` (lien d'invitation du groupe). Tant que `formEndpoint`
+  est vide, le formulaire affiche « les inscriptions ouvrent bientôt ». Après modification : `node outils/build.mjs`.
+- Formulaire : voir `google-apps-script/inscriptions.gs`. Champs envoyés : prenom, nom, email, departement,
+  etablissement (rempli si « Autre établissement / hors IUT »), langue, date.
+- Talks : à chaque sortie, remplacer le bloc du talk (intervenant, sujet) et ajouter le lien YouTube.
+- Événement : quand date et lieu sont connus, mettre à jour la section « Un événement se prépare » et, si besoin,
+  ajouter un bloc JSON-LD `Event` dans le `<head>` de `index.html`.
 
-## Textes attendus du club
+## Textes encore attendus du club
 
-Tous les emplacements `[À fournir : ...]` (classe `.todo`, hachurés à l'écran) : voir le document `_a-envoyer-au-club/CEE_Site_textes-a-fournir.docx`.
+- Phrases de présentation de Martin Range et Alaric Berthout (emplacements `[À fournir : ...]`, hachurés à l'écran).
 
 ## Contraintes
 

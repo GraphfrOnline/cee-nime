@@ -67,7 +67,8 @@
       a.href = k === 'mail' ? 'mailto:' + v : v;
       if (k !== 'mail') { a.target = '_blank'; a.rel = 'noopener'; }
       var h = a.querySelector('.soc__h');
-      if (h) {
+      // Le nom affiché (@compte, page…) est écrit dans la page ; on ne le remplace que s'il manque
+      if (h && h.classList.contains('todo')) {
         h.classList.remove('todo');
         h.textContent = v.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
       }
@@ -209,13 +210,30 @@
   }
   function validate(el) {
     var v = el.type === 'checkbox' ? el.checked : (el.value || '').trim();
-    if (!v) return el.name === 'departement' ? 'm.dept' : el.name === 'rgpd' ? 'm.consent' : 'm.req';
+    if (!v) return el.name === 'departement' ? 'm.dept' : el.name === 'rgpd' ? 'm.consent' : el.name === 'etablissement' ? 'm.etab' : 'm.req';
     if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return 'm.mail';
     return null;
   }
 
   if (form) {
-    var fields = ['prenom', 'nom', 'email', 'departement', 'rgpd'].map(function (n) { return form.elements[n]; });
+    var fields = ['prenom', 'nom', 'email', 'departement', 'etablissement', 'rgpd'].map(function (n) { return form.elements[n]; });
+
+    // « Autre établissement / hors IUT » : on demande le nom de l'établissement
+    var dept = form.elements.departement, etab = form.elements.etablissement, etabField = document.getElementById('f-etab-field');
+    var etabActive = function () { return dept.value === 'hors-iut'; };
+    var syncEtab = function () {
+      var on = etabActive();
+      etabField.hidden = !on;
+      etab.required = on;
+      if (!on) { etab.value = ''; fieldError(etab, null); }
+    };
+    dept.addEventListener('change', function () {
+      var wasHidden = etabField.hidden;
+      syncEtab();
+      if (wasHidden && !etabField.hidden) etab.focus();
+    });
+    syncEtab();
+
     fields.forEach(function (el) {
       var ev = el.tagName === 'SELECT' || el.type === 'checkbox' ? 'change' : 'blur';
       el.addEventListener(ev, function () { if (el.hasAttribute('aria-invalid') || ev === 'change') fieldError(el, validate(el)); });
@@ -227,7 +245,7 @@
       if (form.classList.contains('is-sending')) return;
       var firstBad = null;
       fields.forEach(function (el) {
-        var k = validate(el);
+        var k = el === etab && !etabActive() ? null : validate(el);
         fieldError(el, k);
         if (k && !firstBad) firstBad = el;
       });
@@ -242,7 +260,7 @@
       showMsg(null);
 
       var body = new URLSearchParams();
-      ['prenom', 'nom', 'email', 'departement'].forEach(function (k) { body.append(k, form.elements[k].value.trim()); });
+      ['prenom', 'nom', 'email', 'departement', 'etablissement'].forEach(function (k) { body.append(k, form.elements[k].value.trim()); });
       body.append('langue', lang);
       body.append('date', new Date().toISOString());
 
