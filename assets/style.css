@@ -173,7 +173,8 @@ main:focus{outline:none}
 .join__title span{display:block}
 .join__chip{display:inline-block!important;background:var(--noir);color:var(--papier);padding:.04em .12em 0;margin-top:.06em}
 .join__lead{font-size:clamp(18px,1.6vw,21px);font-weight:700;line-height:1.4;margin-top:26px;max-width:28ch}
-.join__sil{position:absolute;left:0;bottom:0;width:var(--sil);height:auto}
+/* Le bas du dessin est en retrait de ~8 à 9 % à gauche : on le décale pour qu'il touche le bord */
+.join__sil{position:absolute;left:calc(var(--sil) * -.095);bottom:-4px;width:var(--sil);height:auto}
 .join__mark{position:absolute;left:0;bottom:0;width:1px;height:calc(var(--sil) * 1.49 * .62);pointer-events:none}
 /* Écran large : la silhouette grandit avec la marge libre à gauche du contenu */
 @media (min-width:1800px){
@@ -314,7 +315,7 @@ main:focus{outline:none}
   .join__text{display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:end}
   .join__text>*:not(.join__sil){grid-column:1;justify-self:start}
   .join__text{padding-bottom:0}
-  .join__sil{position:static;grid-column:2;grid-row:1/4;width:clamp(120px,22vw,200px);margin:0 calc(-1 * var(--g)) 0 0;padding:0;transform:scaleX(-1)}
+  .join__sil{position:static;grid-column:2;grid-row:1/4;width:clamp(120px,22vw,200px);margin:0 calc(-1 * var(--g)) 0 0;padding:0;transform:scaleX(-1) translateX(calc(-9.5% - var(--g)))}
   .join__box{margin-bottom:var(--sec)}
   .soc{grid-template-columns:1fr 1fr}
   .foot__in{grid-template-columns:auto auto}
