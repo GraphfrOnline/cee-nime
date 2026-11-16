@@ -1,6 +1,7 @@
 # Site du CEE · Club Étudiants Entrepreneurs (IUT de Nîmes)
 
-Landing page bilingue FR/EN du club, en ligne sur **https://cee-nime.vercel.app** (URL du QR code des affiches : elle ne doit jamais changer).
+Landing page bilingue FR/EN du club, en ligne sur **https://cee-nimes.vercel.app** (adresse officielle : liens, partage, sitemap).
+L'ancienne adresse **https://cee-nime.vercel.app** (sans S) est celle du QR code des affiches : elle doit rester active dans les domaines du projet Vercel, ne jamais la supprimer.
 Site statique : HTML, CSS et JavaScript, sans framework, sans dépendance, sans cookie ni traceur.
 Identité « Le Déclic » : noir #0E0E0E, orange #FF5A1F, papier #F4F1EA, gris #8C8C8C. Typos Anton (titres) et Inter (textes), auto-hébergées.
 

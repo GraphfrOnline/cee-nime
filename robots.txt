@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cee-nime.vercel.app/sitemap.xml
+Sitemap: https://cee-nimes.vercel.app/sitemap.xml
