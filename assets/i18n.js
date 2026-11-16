@@ -29,7 +29,7 @@ window.CEE_EN = {
   "bureau.title": "The team", "photo": "Photo to provide",
   "r1": "Co-founder · General coordination &amp; partnerships", "r2": "Co-founder · Financial education and institutional partnerships", "r3": "Co-founder · Strategy &amp; development",
   "b3": "Studying for a BUT GEA degree specialising in entrepreneurship, and also trained as a swimming instructor, I'm open to any opportunity to start or take over a business.",
-  "b1r": "An entrepreneur in the footwear industry and in buying and reselling, I'm also working on a project to take over <a href=\"http://tendancechaussures.com\" rel=\"noopener\">Tendancechaussures.com</a>. At CEE, I coordinate our activities and develop partnerships.",
+  "b1r": "An entrepreneur in the footwear industry, I'm also working on a project to take over <a href=\"http://tendancechaussures.com\" rel=\"noopener\">Tendancechaussures.com</a>. At CEE, I coordinate our activities and develop partnerships.",
   "b1": "[To provide: a one-line introduction]", "bn": "[First Last name]", "br": "[Role]",
   "talks.title": "The talks",
   "talks.intro": "Three entrepreneurs, three journeys. The talks will be released between November and December on our channels. Find the long formats as podcasts on our YouTube channel <a href=\"https://www.youtube.com/channel/UCaoZ_5-w759ln8LZwTxRgsw\" rel=\"noopener\">@club_cee</a>.",
