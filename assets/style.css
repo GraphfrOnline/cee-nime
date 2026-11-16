@@ -140,7 +140,7 @@ main:focus{outline:none}
 .tlist{list-style:none;border-top:2px solid var(--ligne)}
 .talk{display:grid;grid-template-columns:110px 1fr auto auto;gap:28px;align-items:center;padding:28px 0;border-bottom:2px solid var(--ligne)}
 .talk__n{font:400 64px/1 var(--t-d);color:var(--orange)}
-.talk h3{font:400 clamp(26px,2.6vw,36px)/1.05 var(--t-d);text-transform:uppercase;margin-bottom:8px}
+.talk h3{font:400 clamp(26px,2.6vw,36px)/1.15 var(--t-d);text-transform:uppercase;margin-bottom:8px}
 .talk__body p{line-height:1.45}
 .talk__body .todo{padding:2px 6px}
 .talk__date{font-weight:700;white-space:nowrap}
@@ -150,7 +150,9 @@ main:focus{outline:none}
 /* Conférence */
 .conf{background:var(--papier);color:var(--noir)}
 .conf__in{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,6vw,80px);align-items:end}
-.conf__title{font:400 clamp(56px,8vw,120px)/.9 var(--t-d);text-transform:uppercase}
+/* Anton : capitales à .86 em, capitales accentuées à 1.11 em. Sous 1.15 d'interligne, l'accent d'une 2e ligne
+   (CONFÉRENCE, LÉGALES...) mord sur la ligne du dessus : garder 1.15 sur les titres en Anton qui passent sur 2 lignes. */
+.conf__title{font:400 clamp(56px,8vw,120px)/1.15 var(--t-d);text-transform:uppercase}
 .conf__lead{font-size:clamp(18px,1.6vw,20px);font-weight:600;margin-top:24px;max-width:36ch;padding:4px 8px}
 .conf__facts div{display:grid;grid-template-columns:110px 1fr;gap:16px;border-top:4px solid var(--noir);padding:16px 0 20px}
 .conf__facts div:last-child{border-bottom:4px solid var(--noir)}
@@ -220,7 +222,7 @@ main:focus{outline:none}
 .soc a[aria-disabled]{cursor:default}
 .soc__h{font-weight:600;color:var(--gris);padding:2px 6px}
 /* Affiche du club */
-.poster{display:grid;grid-template-columns:auto 1fr;gap:clamp(36px,6vw,96px);align-items:center;margin-top:clamp(64px,8vw,112px)}
+.poster{display:grid;grid-template-columns:auto auto;justify-content:center;gap:clamp(36px,6vw,96px);align-items:center;margin-top:clamp(64px,8vw,112px)}
 .poster__img{display:block;width:clamp(220px,24vw,340px);transform:rotate(-2deg);box-shadow:10px 10px 0 var(--orange);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
 .poster__img img{display:block;width:100%;height:auto}
 @media (hover:hover){.poster__img:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:13px 13px 0 var(--orange)}}
@@ -245,8 +247,8 @@ main:focus{outline:none}
 
 /* ---------- Pages secondaires (mentions légales, 404) ---------- */
 .legal{background:var(--papier);color:var(--noir);padding:clamp(56px,7vw,88px) 0 clamp(72px,9vw,112px)}
-.legal h1{font:400 clamp(52px,7vw,96px)/.95 var(--t-d);text-transform:uppercase;margin-bottom:24px}
-.legal h2{font:400 clamp(26px,2.6vw,32px)/1.1 var(--t-d);text-transform:uppercase;margin:44px 0 14px;border-top:4px solid var(--noir);padding-top:14px;max-width:70ch}
+.legal h1{font:400 clamp(52px,7vw,96px)/1.15 var(--t-d);text-transform:uppercase;margin-bottom:24px}
+.legal h2{font:400 clamp(26px,2.6vw,32px)/1.15 var(--t-d);text-transform:uppercase;margin:44px 0 14px;border-top:4px solid var(--noir);padding-top:14px;max-width:70ch}
 .legal p,.legal li{max-width:70ch;margin-bottom:10px}
 .legal ul{padding-left:22px}
 .legal a{text-decoration-color:var(--orange);text-decoration-thickness:2px}
@@ -359,8 +361,8 @@ main:focus{outline:none}
   .form .row2{grid-template-columns:1fr;gap:18px}
   .soc{grid-template-columns:1fr}
   .soc a{padding:22px 0}
-  .poster{grid-template-columns:1fr;gap:40px}
-  .poster__img{width:min(72vw,300px);margin-left:6px;box-shadow:7px 7px 0 var(--orange)}
+  .poster{grid-template-columns:1fr;justify-content:stretch;gap:40px}
+  .poster__img{width:min(72vw,300px);justify-self:center;box-shadow:7px 7px 0 var(--orange)}
   .poster__txt .btn{width:100%}
   .foot{padding-bottom:calc(112px + env(safe-area-inset-bottom))}
   .foot__in{grid-template-columns:1fr;gap:24px}
