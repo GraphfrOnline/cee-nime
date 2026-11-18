@@ -49,7 +49,7 @@ _a-supprimer/              anciens fichiers remplacés (non publiés, non versio
 
 ## Textes encore attendus du club
 
-- Phrases de présentation de Martin Range et Alaric Berthout (emplacements `[À fournir : ...]`, hachurés à l'écran).
+- Plus aucun emplacement `[À fournir : ...]` sur la page d'accueil (les trois présentations du bureau sont en ligne).
 
 ## Contraintes
 

@@ -28,6 +28,7 @@ window.CEE_EN = {
   "p3.tag": "Meetings", "p3.lead": "Afterworks, a conference, entrepreneurship workshops.", "p3.more": "Afterworks, hands-on workshops and meetups around entrepreneurship: moments to share, learn and move your ideas forward.",
   "bureau.title": "The team", "photo": "Photo to provide",
   "r1": "Co-founder · General coordination &amp; partnerships", "r2": "Co-founder · Financial education and institutional partnerships", "r3": "Co-founder · Strategy &amp; development",
+  "b2": "A student who, alongside this, is learning how financial markets work and is aiming for a career in investment.",
   "b3": "Studying for a BUT GEA degree specialising in entrepreneurship, and also trained as a swimming instructor, I'm open to any opportunity to start or take over a business.",
   "b1r": "An entrepreneur in the footwear industry, I'm also working on a project to take over <a href=\"http://tendancechaussures.com\" rel=\"noopener\">Tendancechaussures.com</a>. At CEE, I coordinate our activities and develop partnerships.",
   "b1": "[To provide: a one-line introduction]", "bn": "[First Last name]", "br": "[Role]",
