@@ -10,7 +10,7 @@ window.CEE_CONFIG = {
 
   // Réseaux du club (URL complètes)
   instagram: "https://www.instagram.com/cee.nimes/",
-  linkedin: "https://www.linkedin.com/company/cee-iut-nimes",
-  youtube: "https://www.youtube.com/channel/UCaoZ_5-w759ln8LZwTxRgsw",
+  linkedin: "https://www.linkedin.com/company/cee-nimes",
+  youtube: "https://www.youtube.com/@cee_nimes",
   mail: "club.etudiant.cee@gmail.com" // sans "mailto:"
 };

@@ -33,7 +33,7 @@ window.CEE_EN = {
   "b1r": "An entrepreneur in the footwear industry, I'm also working on a project to take over <a href=\"http://tendancechaussures.com\" rel=\"noopener\">Tendancechaussures.com</a>. At CEE, I coordinate our activities and develop partnerships.",
   "b1": "[To provide: a one-line introduction]", "bn": "[First Last name]", "br": "[Role]",
   "talks.title": "The talks",
-  "talks.intro": "Three entrepreneurs, three journeys. The talks will be released between November and December on our channels. Find the long formats as podcasts on our YouTube channel <a href=\"https://www.youtube.com/channel/UCaoZ_5-w759ln8LZwTxRgsw\" rel=\"noopener\">@club_cee</a>.",
+  "talks.intro": "Three entrepreneurs, three journeys. The talks will be released between November and December on our channels. Find the long formats as podcasts on our YouTube channel <a href=\"https://www.youtube.com/@cee_nimes\" rel=\"noopener\">@cee_nimes</a>.",
   "t1.name": "[Speaker 1 · field]", "t.sub": "[To provide: talk topic in one line]", "t1.date": "Mid-November",
   "t2.topic": "Import-export from China: challenges and potential.", "t2.sub": "Interview in English, with French subtitles.", "t2.date": "Early December",
   "t.tbc": "Speaker and topic to be confirmed", "t.search": "The search is under way.", "t3.date": "Mid-December", "soon": "Coming soon",
