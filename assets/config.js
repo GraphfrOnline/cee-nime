@@ -9,7 +9,7 @@ window.CEE_CONFIG = {
   whatsapp: "",
 
   // Réseaux du club (URL complètes)
-  instagram: "https://www.instagram.com/club_cee/",
+  instagram: "https://www.instagram.com/cee.nimes/",
   linkedin: "https://www.linkedin.com/company/cee-iut-nimes",
   youtube: "https://www.youtube.com/channel/UCaoZ_5-w759ln8LZwTxRgsw",
   mail: "club.etudiant.cee@gmail.com" // sans "mailto:"
