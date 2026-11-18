@@ -17,7 +17,7 @@ window.CEE_EN = {
   "nav.club": "The club", "nav.bureau": "The team", "nav.talks": "Talks", "nav.conf": "Events", "nav.social": "Follow us",
   "cta.join": "Join", "cta.joinclub": "Join the club", "cta.talks": "Watch the talks",
   "hero.kicker": "IUT de Nîmes · Student Entrepreneurs Club",
-  "hero.l1": "Got an idea?", "hero.l2": "Let's talk about it.",
+  "hero.l1": "Your project", "hero.l2": "starts here.",
   "hero.lead": "The club for anyone who wants to start something, during their studies and beyond. Open to students from every field and every school.",
   "f1n": "3 formats", "f1": "talks, workshops and meetups", "f2n": "Ideas", "f2": "to grow together", "f3n": "A network", "f3": "to build things together", "f4n": "Everywhere", "f4": "at the IUT and beyond",
   "club.title": "The club",

@@ -17,7 +17,7 @@ assets/i18n.js             textes anglais (source)      -> assets/app.min.js (g�
 assets/main.js             comportements (source)       -> assets/app.min.js (généré)
 assets/fonts/              Anton et Inter, sous-ensemble latin (woff2)
 assets/img/                logos SVG optimisés, mascotte et fonds en WebP (plusieurs tailles)
-favicon.*, icon-*.png, apple-touch-icon.png, site.webmanifest, og-image.jpg (partage 1200x630)
+favicon.*, icon-*.png, apple-touch-icon.png, site.webmanifest, og-image-v2.jpg (partage 1200x630)
 robots.txt, sitemap.xml, vercel.json (en-têtes de cache et de sécurité, URL sans .html)
 outils/build.mjs           minifie CSS et JS, met à jour les empreintes ?v= des pages
 outils/serveur-local.py    serveur de test qui imite Vercel (URL propres, page 404)
